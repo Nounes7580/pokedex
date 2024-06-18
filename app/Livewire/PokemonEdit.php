@@ -56,8 +56,8 @@ class PokemonEdit extends Component
         $this->validate([
             'name' => 'required|string|max:255',
             'hp' => 'required|integer',
-            'weight' => 'required|integer',
-            'height' => 'required|integer',
+            'weight' => 'required|numeric',
+            'height' => 'required|numeric',
             'type1_id' => 'required|exists:types,id',
             'type2_id' => 'nullable|exists:types,id',
             'attack1_id' => 'nullable|exists:attacks,id',

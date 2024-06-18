@@ -1,4 +1,3 @@
-
 <div style="background-image: url('{{ asset('images/center.png') }}'); background-size: cover; background-position: center; min-height: 100vh; width: 100%;">
 <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -21,11 +20,11 @@
                         </div>
                         <div>
                             <label for="weight" class="block font-medium text-sm text-gray-700">Weight</label>
-                            <input id="weight" type="number" wire:model="weight" class="mt-1 block w-full" required>
+                            <input id="weight" type="number" step="0.1" wire:model="weight" class="mt-1 block w-full" required>
                         </div>
                         <div>
                             <label for="height" class="block font-medium text-sm text-gray-700">Height</label>
-                            <input id="height" type="number" wire:model="height" class="mt-1 block w-full" required>
+                            <input id="height" type="number" step="0.1" wire:model="height" class="mt-1 block w-full" required>
                         </div>
                         <div>
                             <label for="type1_id" class="block font-medium text-sm text-gray-700">Type 1</label>
@@ -109,4 +108,3 @@
         </div>
     </div>
 </div>
-

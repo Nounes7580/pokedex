@@ -20,11 +20,11 @@
                         </div>
                         <div>
                             <label for="weight" class="block font-medium text-sm text-gray-700">Weight</label>
-                            <input id="weight" type="number" wire:model="weight" class="mt-1 block w-full" required>
+                            <input id="weight" type="number" step="0.1" wire:model="weight" class="mt-1 block w-full" required>
                         </div>
                         <div>
                             <label for="height" class="block font-medium text-sm text-gray-700">Height</label>
-                            <input id="height" type="number" wire:model="height" class="mt-1 block w-full" required>
+                            <input id="height" type="number" step="0.1" wire:model="height" class="mt-1 block w-full" required>
                         </div>
                         <div>
                             <label for="type1_id" class="block font-medium text-sm text-gray-700">Type 1</label>

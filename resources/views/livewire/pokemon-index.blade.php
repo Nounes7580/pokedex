@@ -16,7 +16,11 @@
             @foreach ($pokemons as $pokemon)
                 <a href="{{ route('pokemon.show', $pokemon->id) }}" class="block bg-white rounded-lg border-2 shadow-lg hover:shadow-xl hover:scale-105 transform transition duration-300 overflow-hidden" style="border-color: {{ $pokemon->type1->color }}">
                     <div class="p-4">
-                        <img src="{{ asset('storage/' . $pokemon->image) }}" alt="{{ $pokemon->name }}" class="w-32 h-32 mx-auto mt-4">
+                    @if (file_exists(public_path('storage/' . $pokemon->image)))
+                            <img src="{{ asset('storage/' . $pokemon->image) }}" alt="{{ $pokemon->name }}" class="w-32 h-32 mx-auto mt-4">
+                        @else
+                            <img src="{{ asset( $pokemon->image) }}" alt="{{ $pokemon->name }}" class="w-32 h-32 mx-auto mt-4">
+                        @endif
                         <div class="p-4 text-center">
                             <h2 class="text-xl font-bold mb-2">{{ $pokemon->name }}</h2>
                             <div class="text-gray-700">

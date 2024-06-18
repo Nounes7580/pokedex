@@ -10,7 +10,11 @@
     <div class="min-h-screen bg-cover bg-center flex justify-center items-center" style="background-image: url('{{ asset('images/paysage.png') }}');">
         <div class="bg-white bg-opacity-80 rounded-lg shadow-lg p-8 max-w-md w-full">
             <div class="flex flex-col items-center mb-4">
-                <img src="{{ asset('storage/' . $pokemon->image) }}" alt="{{ $pokemon->name }}" class="w-32 h-32 object-cover rounded-full border-2 border-gray-200">
+            @if (file_exists(public_path('storage/' . $pokemon->image)))
+                            <img src="{{ asset('storage/' . $pokemon->image) }}" alt="{{ $pokemon->name }}" class="w-32 h-32 object-cover rounded-full border-2 border-gray-200">
+                        @else
+                            <img src="{{ asset( $pokemon->image) }}" alt="{{ $pokemon->name }}" class="w-32 h-32 object-cover rounded-full border-2 border-gray-200">
+                        @endif
                 <div class="mt-4 text-center">
                     <h2 class="text-3xl font-bold">{{ $pokemon->name }}</h2>
                     <p class="font-semibold">Points de vie : <span class="font-semibold">{{ $pokemon->hp }}</span></p>

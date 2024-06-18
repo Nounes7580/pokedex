@@ -45,8 +45,8 @@ class PokemonCreate extends Component
         $this->validate([
             'name' => 'required|string|max:255',
             'hp' => 'required|integer',
-            'weight' => 'required|integer',
-            'height' => 'required|integer',
+            'weight' => 'required|numeric',
+            'height' => 'required|numeric',
             'selectedTypes' => 'required|array|min:1|max:2',
             'image' => 'required|image|max:1024',
             'selectedAttacks' => 'required|array|min:1',
